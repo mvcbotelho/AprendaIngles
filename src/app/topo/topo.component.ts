@@ -12,4 +12,6 @@ export class TopoComponent implements OnInit {
   ngOnInit() {
   }
 
+  public title: string = 'Aprendendo Inglês';
+
 }

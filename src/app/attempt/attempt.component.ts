@@ -12,4 +12,6 @@ export class AttemptComponent implements OnInit {
   ngOnInit() {
   }
 
+  public emptyHeart: string = '/assets/coracao_vazio.png';
+  public fullHeart: string = '/assets/coracao_cheio.png';
 }
