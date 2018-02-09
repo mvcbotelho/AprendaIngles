@@ -17,6 +17,8 @@ export class PanelComponent implements OnInit {
    public round: number = 0;
    public roundPhrase: Phrase;
 
+   public progress: number = 0;
+
   constructor() {
     this.roundPhrase = this.phrase[this.round];
   }
@@ -32,8 +34,9 @@ export class PanelComponent implements OnInit {
   public checkAnswer(): void {
     if(this.roundPhrase.phrasePTBR === this.response){
       alert('Tradução correta');
-      this.round ++;
+      this.progress = this.progress + (100 / this.phrase.length);
       this.roundPhrase = this.phrase[this.round];
+      this.round ++;
     } else {
       alert('Tradução incorreta')
     }
