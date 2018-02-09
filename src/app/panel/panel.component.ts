@@ -19,7 +19,6 @@ export class PanelComponent implements OnInit {
 
   constructor() {
     this.roundPhrase = this.phrase[this.round];
-    console.log(this.roundPhrase)
   }
 
   ngOnInit() {
@@ -31,6 +30,12 @@ export class PanelComponent implements OnInit {
   }
 
   public checkAnswer(): void {
-    console.log('Verifica resposta:', this.response);
+    if(this.roundPhrase.phrasePTBR === this.response){
+      alert('Tradução correta');
+      this.round ++;
+      this.roundPhrase = this.phrase[this.round];
+    } else {
+      alert('Tradução incorreta')
+    }
   }
 }
